@@ -15,6 +15,8 @@
 		873685921EA06A7B00FEA624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873685901EA06A7B00FEA624 /* LaunchScreen.storyboard */; };
 		8736859D1EA06A7B00FEA624 /* CH_HealthCareTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8736859C1EA06A7B00FEA624 /* CH_HealthCareTestTests.m */; };
 		873685A81EA06A7C00FEA624 /* CH_HealthCareTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 873685A71EA06A7C00FEA624 /* CH_HealthCareTestUITests.m */; };
+		873685B81EA06C1400FEA624 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873685B71EA06C1400FEA624 /* HealthKit.framework */; };
+		873685BB1EA06CE000FEA624 /* CHHealthKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 873685BA1EA06CE000FEA624 /* CHHealthKitManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		873685A31EA06A7B00FEA624 /* CH_HealthCareTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CH_HealthCareTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		873685A71EA06A7C00FEA624 /* CH_HealthCareTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_HealthCareTestUITests.m; sourceTree = "<group>"; };
 		873685A91EA06A7C00FEA624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		873685B51EA06C1400FEA624 /* CH_HealthCareTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CH_HealthCareTest.entitlements; sourceTree = "<group>"; };
+		873685B71EA06C1400FEA624 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		873685B91EA06CE000FEA624 /* CHHealthKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHealthKitManager.h; sourceTree = "<group>"; };
+		873685BA1EA06CE000FEA624 /* CHHealthKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHealthKitManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873685B81EA06C1400FEA624 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +92,7 @@
 				8736859B1EA06A7B00FEA624 /* CH_HealthCareTestTests */,
 				873685A61EA06A7C00FEA624 /* CH_HealthCareTestUITests */,
 				873685801EA06A7B00FEA624 /* Products */,
+				873685B61EA06C1400FEA624 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +109,11 @@
 		873685811EA06A7B00FEA624 /* CH_HealthCareTest */ = {
 			isa = PBXGroup;
 			children = (
+				873685B51EA06C1400FEA624 /* CH_HealthCareTest.entitlements */,
 				873685851EA06A7B00FEA624 /* AppDelegate.h */,
 				873685861EA06A7B00FEA624 /* AppDelegate.m */,
+				873685B91EA06CE000FEA624 /* CHHealthKitManager.h */,
+				873685BA1EA06CE000FEA624 /* CHHealthKitManager.m */,
 				873685881EA06A7B00FEA624 /* ViewController.h */,
 				873685891EA06A7B00FEA624 /* ViewController.m */,
 				8736858B1EA06A7B00FEA624 /* Main.storyboard */,
@@ -138,6 +149,14 @@
 				873685A91EA06A7C00FEA624 /* Info.plist */,
 			);
 			path = CH_HealthCareTestUITests;
+			sourceTree = "<group>";
+		};
+		873685B61EA06C1400FEA624 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				873685B71EA06C1400FEA624 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +226,13 @@
 				TargetAttributes = {
 					8736857E1EA06A7B00FEA624 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = M49FN474JV;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					873685971EA06A7B00FEA624 = {
 						CreatedOnToolsVersion = 8.3;
@@ -276,6 +301,7 @@
 				8736858A1EA06A7B00FEA624 /* ViewController.m in Sources */,
 				873685871EA06A7B00FEA624 /* AppDelegate.m in Sources */,
 				873685841EA06A7B00FEA624 /* main.m in Sources */,
+				873685BB1EA06CE000FEA624 /* CHHealthKitManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +452,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CH_HealthCareTest/CH_HealthCareTest.entitlements;
+				DEVELOPMENT_TEAM = M49FN474JV;
 				INFOPLIST_FILE = CH_HealthCareTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "easyGroup.CH-HealthCareTest";
@@ -437,6 +465,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CH_HealthCareTest/CH_HealthCareTest.entitlements;
+				DEVELOPMENT_TEAM = M49FN474JV;
 				INFOPLIST_FILE = CH_HealthCareTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "easyGroup.CH-HealthCareTest";
