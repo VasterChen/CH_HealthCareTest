@@ -4,3 +4,4 @@
 1、Privacy - Health Update Usage Description
 2、Privacy - Health Share Usage Description
 权限获取，其次打开Capabilities中HealthKit的开关 那么就可以了 
+# CH_HealthCareTest
